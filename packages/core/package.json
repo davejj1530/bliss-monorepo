@@ -1,0 +1,23 @@
+{
+  "name": "@bliss/core",
+  "version": "0.0.0",
+  "description": "React UI library",
+  "author": "davidceriola <davejjceriola@gmail.com>",
+  "homepage": "",
+  "license": "MIT",
+  "main": "lib/index.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "@types/react": "^17.0.19",
+    "typescript": "^4.4.2"
+  }
+}

@@ -2,7 +2,7 @@
   "name": "@bliss/core",
   "version": "0.0.0",
   "description": "React UI library",
-  "author": "davidceriola <davejjceriola@gmail.com>",
+  "author": "davidceriola <eliasdavidceriola@gmail.com>",
   "homepage": "",
   "license": "MIT",
   "main": "lib/index.ts",

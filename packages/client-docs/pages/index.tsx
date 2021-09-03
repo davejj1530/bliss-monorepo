@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import { Button } from "@bliss/core";
+import { Button } from "bliss-core";
 
 export default function Home() {
   return (

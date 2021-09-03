@@ -16,7 +16,7 @@ export const Button = (props: Props) => {
 };
 
 const StyledButton = styled.button`
-  background-color: ${(props) => (props.error ? "red" : "#000")};
+  background-color: ${(props) => (props.error ? "red" : "#00f")};
   padding: 8px 1rem;
   color: white;
   border-radius: ${(props) =>

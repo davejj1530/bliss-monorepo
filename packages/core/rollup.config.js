@@ -4,6 +4,7 @@ import external from "rollup-plugin-peer-deps-external";
 import typescript from "@rollup/plugin-typescript";
 import pkg from "./package.json";
 import { terser } from "rollup-plugin-terser";
+import dts from "rollup-plugin-dts";
 
 const EXTENSIONS = [".ts", ".tsx"];
 const EXTERNAL = Object.keys(pkg.devDependencies);
@@ -35,5 +36,10 @@ export default [
       terser(),
     ],
     external: EXTERNAL,
+  },
+  {
+    input: "./lib/index.ts",
+    output: [{ file: "dist/index.d.ts", format: "es" }],
+    plugins: [dts()],
   },
 ];

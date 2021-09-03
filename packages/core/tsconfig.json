@@ -3,6 +3,8 @@
   "compilerOptions": {
     "isolatedModules": true,
     "noEmit": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "outDir": "dist"
   }
 }

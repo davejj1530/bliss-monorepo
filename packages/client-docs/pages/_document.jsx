@@ -9,6 +9,7 @@ export default class MyDocument extends Document {
     try {
       ctx.renderPage = () =>
         originalRenderPage({
+          // eslint-disable-next-line react/display-name
           enhanceApp: (App) => (props) =>
             sheet.collectStyles(<App {...props} />),
         });
@@ -31,7 +32,6 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en-GB">
         <Head>
-          <title>Bliss UI</title>
           <meta
             property="description"
             content="Bliss UI - Blazing Fast React Component Library"

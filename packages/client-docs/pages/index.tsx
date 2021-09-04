@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Space>
-        <Button onClick={() => alert("HELLO WORLD!")} pill disabled>
+        <Button onClick={() => alert("HELLO WORLD!")} pill>
           HELLO WORLD!
         </Button>
       </Space>

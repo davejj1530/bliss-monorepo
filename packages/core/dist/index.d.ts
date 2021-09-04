@@ -1,13 +1,13 @@
 import React from 'react';
 
-declare type Props$2 = {
+declare type ButtonProps = {
     color?: string;
     square?: boolean;
-    error?: boolean;
     children?: React.ReactNode;
     pill?: boolean;
+    outlined?: boolean;
 } | React.HTMLProps<HTMLButtonElement>;
-declare const Button: (props: Props$2) => JSX.Element;
+declare const Button: (props: ButtonProps) => JSX.Element;
 
 declare const Calendar: () => JSX.Element;
 

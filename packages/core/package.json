@@ -19,7 +19,7 @@
     "build-storybook": "build-storybook",
     "build-lib": "rimraf dist  && rollup --config",
     "tsc": "tsc",
-    "chromatic": "npx chromatic --project-token=233a7ef0a3ec"
+    "chromatic": "npx chromatic --project-token=233a7ef0a3ec --auto-accept-changes"
   },
   "dependencies": {
     "@types/react": "^17.0.19",

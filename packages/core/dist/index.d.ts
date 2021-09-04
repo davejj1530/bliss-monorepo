@@ -28,4 +28,27 @@ declare type Props = {
 } | React.HTMLProps<HTMLDivElement>;
 declare const Space: (props: Props) => JSX.Element;
 
-export { Button, Calendar, Section, Space };
+declare type BlissStylePropTypes = {
+    pt?: string | number;
+    pb?: string | number;
+    pl?: string | number;
+    pr?: string | number;
+    mt?: string | number;
+    mb?: string | number;
+    ml?: string | number;
+    mr?: string | number;
+    py?: string | number;
+    px?: string | number;
+    my?: string | number;
+    mx?: string | number;
+    p?: string | number;
+    m?: string | number;
+    bg?: string;
+};
+
+declare type BoxProps = {
+    children?: React.ReactNode;
+} & React.CSSProperties & BlissStylePropTypes;
+declare const Box: (props: BoxProps) => JSX.Element;
+
+export { Box, Button, Calendar, Section, Space };

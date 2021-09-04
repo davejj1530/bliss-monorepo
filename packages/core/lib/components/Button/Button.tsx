@@ -88,8 +88,14 @@ const StyledButton = styled.button`
   text-transform: uppercase;
   transition: all 0.3s ease 0s;
   box-shadow: ${handleElevation};
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
   &:hover {
-    opacity: 0.7;
-    transform: ${handleLift};
+    &:not([disabled]) {
+      opacity: 0.7;
+      transform: ${handleLift};
+    }
   }
 `;

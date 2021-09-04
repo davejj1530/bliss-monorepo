@@ -72,3 +72,9 @@ export const InterActiveButton = () => (
 export const ElevatedButton = () => (
   <Button elevation={1}>Elevated Button</Button>
 );
+
+export const DisabledButton = () => (
+  <Button disabled={true} type="error">
+    Disabled Button
+  </Button>
+);

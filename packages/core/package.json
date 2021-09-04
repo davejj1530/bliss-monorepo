@@ -18,7 +18,8 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build-lib": "rimraf dist  && rollup --config",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "chromatic": "npx chromatic --project-token=233a7ef0a3ec"
   },
   "dependencies": {
     "@types/react": "^17.0.19",
@@ -42,6 +43,7 @@
     "@storybook/addon-links": "^6.3.7",
     "@storybook/react": "^6.3.7",
     "babel-loader": "^8.2.2",
+    "chromatic": "^5.9.2",
     "microbundle": "^0.13.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

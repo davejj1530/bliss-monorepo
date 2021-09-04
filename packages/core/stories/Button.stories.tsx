@@ -66,5 +66,5 @@ export const PillButton = () => <Button pill>I am a Pill</Button>;
 export const OutlinedButton = () => <Button outlined>Outline Button</Button>;
 
 export const InterActiveButton = () => (
-  <Button liftOnHover>Interact with me</Button>
+  <Button liftOnHover>Interact with me!</Button>
 );

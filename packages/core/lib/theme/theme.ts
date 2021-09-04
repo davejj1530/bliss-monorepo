@@ -16,4 +16,7 @@ export const theme = {
       light: "#6fbf73",
     },
   },
+  elevation: {
+    main: "0px 2px 2px #cecece",
+  },
 };

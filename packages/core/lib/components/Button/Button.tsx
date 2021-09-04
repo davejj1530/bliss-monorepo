@@ -11,6 +11,7 @@ type ButtonProps = {
   pallette?: "dark" | "light";
   type?: "primary" | "success" | "error";
   liftOnHover?: boolean;
+  elevation?: number;
 } & React.HTMLProps<HTMLButtonElement>;
 
 export const Button = (props: ButtonProps) => {
@@ -61,6 +62,13 @@ const handleLift = (props: ButtonProps) => {
   }
 };
 
+const handleElevation = (props: ButtonProps) => {
+  if (props.elevation) {
+    return theme.elevation[props.elevation];
+  }
+  return "";
+};
+
 const StyledButton = styled.button`
   background-color: ${handleBackgroundColor};
   padding: 8px 1rem;
@@ -71,6 +79,7 @@ const StyledButton = styled.button`
   cursor: pointer;
   text-transform: uppercase;
   transition: all 0.3s ease 0s;
+  box-shadow: ${handleElevation};
   &:hover {
     opacity: 0.7;
     transform: ${handleLift};

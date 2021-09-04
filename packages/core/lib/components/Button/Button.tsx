@@ -8,14 +8,22 @@ type ButtonProps = {
   children?: React.ReactNode;
   pill?: boolean;
   outlined?: boolean;
-  pallette?: "dark" | "light";
+  pallette?: "dark" | "light" | "main";
   type?: "primary" | "success" | "error";
   liftOnHover?: boolean;
   elevation?: number;
 } & React.HTMLProps<HTMLButtonElement>;
 
-export const Button = (props: ButtonProps) => {
-  return <StyledButton {...props}>{props.children}</StyledButton>;
+export const Button = ({
+  type = "primary",
+  elevation = 0,
+  ...props
+}: ButtonProps) => {
+  return (
+    <StyledButton type={type} elevation={elevation} {...props}>
+      {props.children}
+    </StyledButton>
+  );
 };
 
 const handleBackgroundColor = (props: ButtonProps) => {

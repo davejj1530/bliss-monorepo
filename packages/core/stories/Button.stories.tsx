@@ -37,19 +37,19 @@ export const SuccessDark = () => (
 
 export const PrimaryLight = () => (
   <Button type="primary" pallette="light">
-    Primary Dark
+    Primary Light
   </Button>
 );
 
 export const ErrorLight = () => (
   <Button type="error" pallette="light">
-    Error Dark
+    Error Light
   </Button>
 );
 
 export const SuccessLight = () => (
   <Button type="success" pallette="light">
-    Success Dark
+    Success Light
   </Button>
 );
 
@@ -67,4 +67,8 @@ export const OutlinedButton = () => <Button outlined>Outline Button</Button>;
 
 export const InterActiveButton = () => (
   <Button liftOnHover>Interact with me!</Button>
+);
+
+export const ElevatedButton = () => (
+  <Button elevation={1}>Elevated Button</Button>
 );

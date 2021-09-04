@@ -17,6 +17,10 @@ export const theme = {
     },
   },
   elevation: {
-    main: "0px 2px 2px #cecece",
+    1: "2px 2px 2px #cecece",
+    2: "2px 4px 2px #cecece",
+    3: "2px 4px 8px #cecece",
+    4: "2px 6px 8px #cecece",
+    5: "2px 8px 10px #cecece",
   },
 };

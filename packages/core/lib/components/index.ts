@@ -3,3 +3,4 @@ export * from "./Calendar";
 export * from "./Section";
 export * from "./Space";
 export * from "./Box";
+export * from "./GridSystem";

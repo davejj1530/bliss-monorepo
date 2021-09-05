@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { theme } from "../../theme";
+import { Theme } from "../../theme";
+import { useTheme } from "../../theme/useTheme";
 
 type ButtonProps = {
   color?: string;
@@ -9,9 +10,10 @@ type ButtonProps = {
   pill?: boolean;
   outlined?: boolean;
   pallette?: "dark" | "light" | "main";
-  type?: "primary" | "success" | "error";
+  themeColor?: "primary" | "secondary" | "tertiary";
   liftOnHover?: boolean;
   elevation?: number;
+  theme?: Theme;
 } & React.HTMLProps<HTMLButtonElement>;
 
 export const Button = ({
@@ -19,8 +21,10 @@ export const Button = ({
   elevation = 0,
   ...props
 }: ButtonProps) => {
+  const { theme } = useTheme();
+
   return (
-    <StyledButton type={type} elevation={elevation} {...props}>
+    <StyledButton theme={theme} type={type} elevation={elevation} {...props}>
       {props.children}
     </StyledButton>
   );
@@ -57,11 +61,11 @@ const handleButtonColorization = (props: ButtonProps) => {
 
   const pallette = props.pallette || "main";
 
-  const type = props.type || "primary";
+  const themeColor = props.themeColor || "primary";
 
-  if (type === "primary") return theme.colors.blue[pallette];
-  if (type === "error") return theme.colors.red[pallette];
-  if (type === "success") return theme.colors.green[pallette];
+  if (themeColor === "primary") return props.theme.colors.primary[pallette];
+  if (themeColor === "secondary") return props.theme.colors.secondary[pallette];
+  if (themeColor === "tertiary") return props.theme.colors.tertiary[pallette];
 };
 
 const handleLift = (props: ButtonProps) => {
@@ -72,7 +76,7 @@ const handleLift = (props: ButtonProps) => {
 
 const handleElevation = (props: ButtonProps) => {
   if (props.elevation) {
-    return theme.elevation[props.elevation];
+    return props.theme.elevation[props.elevation];
   }
   return "";
 };

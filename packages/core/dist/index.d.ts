@@ -1,5 +1,27 @@
 import React from 'react';
 
+declare type Theme = {
+    colors: Pallette;
+    elevation?: Elevation;
+};
+declare type Pallette = {
+    primary: PalleteWeights;
+    secondary: PalleteWeights;
+    tertiary: PalleteWeights;
+};
+declare type PalleteWeights = {
+    dark: string;
+    main: string;
+    light: string;
+};
+declare type Elevation = {
+    1: string;
+    2: string;
+    3: string;
+    4: string;
+    5: string;
+};
+
 declare type ButtonProps = {
     color?: string;
     square?: boolean;
@@ -7,9 +29,10 @@ declare type ButtonProps = {
     pill?: boolean;
     outlined?: boolean;
     pallette?: "dark" | "light" | "main";
-    type?: "primary" | "success" | "error";
+    themeColor?: "primary" | "secondary" | "tertiary";
     liftOnHover?: boolean;
     elevation?: number;
+    theme?: Theme;
 } & React.HTMLProps<HTMLButtonElement>;
 declare const Button: ({ type, elevation, ...props }: ButtonProps) => JSX.Element;
 
@@ -48,7 +71,7 @@ declare type BlissStylePropTypes = {
 
 declare type BoxProps = {
     children?: React.ReactNode;
-} & React.CSSProperties & BlissStylePropTypes;
+} & React.CSSProperties & BlissStylePropTypes & React.HTMLProps<HTMLDivElement>;
 declare const Box: (props: BoxProps) => JSX.Element;
 
 export { Box, Button, Calendar, Section, Space };

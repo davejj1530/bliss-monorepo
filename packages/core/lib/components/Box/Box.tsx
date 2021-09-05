@@ -5,7 +5,8 @@ import { blissStyleProps, BlissStylePropTypes } from "../../bliss_system";
 type BoxProps = {
   children?: React.ReactNode;
 } & React.CSSProperties &
-  BlissStylePropTypes;
+  BlissStylePropTypes &
+  React.HTMLProps<HTMLDivElement>;
 
 export const Box = (props: BoxProps) => {
   return (

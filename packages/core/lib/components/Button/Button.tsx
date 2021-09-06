@@ -16,19 +16,23 @@ type ButtonProps = {
   theme?: Theme;
 } & React.HTMLProps<HTMLButtonElement>;
 
-export const Button = ({
-  type = "primary",
-  elevation = 0,
-  ...props
-}: ButtonProps) => {
-  const { theme } = useTheme();
+export const Button = React.forwardRef(
+  ({ type = "primary", elevation = 0, ...props }: ButtonProps, ref) => {
+    const { theme } = useTheme();
 
-  return (
-    <StyledButton theme={theme} type={type} elevation={elevation} {...props}>
-      {props.children}
-    </StyledButton>
-  );
-};
+    return (
+      <StyledButton
+        ref={ref}
+        theme={theme}
+        type={type}
+        elevation={elevation}
+        {...props}
+      >
+        {props.children}
+      </StyledButton>
+    );
+  }
+);
 
 const handleBackgroundColor = (props: ButtonProps) => {
   if (props.outlined) {

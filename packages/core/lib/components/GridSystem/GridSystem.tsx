@@ -2,9 +2,10 @@ import React, { useContext } from "react";
 import styled, { css } from "styled-components";
 import { breakpoints } from "../../bliss_system";
 
-type RowProps = {
+type GridProps = {
   children?: React.ReactNode;
   spacing?: number;
+  center?: boolean;
 };
 
 type ItemProps = {
@@ -15,7 +16,7 @@ type ItemProps = {
   xl?: number;
   children?: React.ReactNode;
   spacing?: number;
-};
+} & React.HTMLProps<HTMLDivElement>;
 
 type GridContext = {
   spacing: number;
@@ -23,7 +24,7 @@ type GridContext = {
 
 const SpacingContext = React.createContext<GridContext | null>(null);
 
-export const Grid = (props: RowProps) => {
+export const Grid = (props: GridProps) => {
   const SpacingProvider = SpacingContext.Provider;
   return (
     <StyledGrid {...props}>
@@ -41,6 +42,14 @@ export const Item = (props: ItemProps) => {
       {props.children}
     </StyledItem>
   );
+};
+
+const handleCenterGrid = (props: GridProps) => {
+  if (props.center) {
+    return css`
+      justify-content: center;
+    `;
+  }
 };
 
 const handleItemBreakPoints = (props: ItemProps) => {
@@ -70,7 +79,7 @@ const handleItemBreakPoints = (props: ItemProps) => {
 const StyledGrid = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -8px 0 -8px;
+  ${handleCenterGrid}
 `;
 
 const StyledItem = styled.div`

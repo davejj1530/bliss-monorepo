@@ -6,3 +6,4 @@ export * from "./Box";
 export * from "./GridSystem";
 export * from "./SideBar";
 export * from "./Paper";
+export * from "./Input";

@@ -39,5 +39,6 @@ const StyledSelect = styled.select`
   outline: none;
   border: 1px solid #eee;
   border-radius: 4px;
+  box-shadow: 0 1px 1.5px -1px #777;
   ${handleFullWidth}
 `;

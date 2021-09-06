@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Theme } from "../../theme";
 import { useTheme } from "../../theme/useTheme";
 
@@ -14,6 +14,7 @@ type ButtonProps = {
   liftOnHover?: boolean;
   elevation?: number;
   theme?: Theme;
+  fullWidth?: boolean;
 } & React.HTMLProps<HTMLButtonElement>;
 
 export const Button = React.forwardRef(
@@ -85,6 +86,14 @@ const handleElevation = (props: ButtonProps) => {
   return "";
 };
 
+const handleFullWidth = (props: ButtonProps) => {
+  if (props.fullWidth) {
+    return css`
+      width: 100%;
+    `;
+  }
+};
+
 const StyledButton = styled.button`
   background-color: ${handleBackgroundColor};
   padding: 8px 1rem;
@@ -96,6 +105,7 @@ const StyledButton = styled.button`
   text-transform: uppercase;
   transition: all 0.3s ease 0s;
   box-shadow: ${handleElevation};
+
   &:disabled {
     opacity: 0.4;
     cursor: not-allowed;
@@ -106,4 +116,5 @@ const StyledButton = styled.button`
       transform: ${handleLift};
     }
   }
+  ${handleFullWidth}
 `;

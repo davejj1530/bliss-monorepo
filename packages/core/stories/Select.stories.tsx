@@ -19,6 +19,7 @@ export const SampleSelect = () => (
 
 export const fullWidthSelect = () => (
   <Select
+    onChange={(e) => console.log(e.target.value)}
     fullWidth
     options={new Array(4)
       .fill("item")

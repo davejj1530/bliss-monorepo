@@ -12,3 +12,9 @@ export default {
 export const SamplePaddedBox = () => (
   <Box p={4}>Hi! I'm a Box with a padding</Box>
 );
+
+export const BorderedBox = () => (
+  <Box border="1px solid #eee" p={4}>
+    BORDERED BOX
+  </Box>
+);
